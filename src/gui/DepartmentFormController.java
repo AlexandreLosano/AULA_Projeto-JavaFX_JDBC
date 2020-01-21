@@ -58,7 +58,7 @@ public class DepartmentFormController implements Initializable {
 	}
 	
 	@FXML
-	public void onBtSaveAction(ActionEvent event) {
+	public void onBtSaveAction(ActionEvent evento) {	
 		if (entity == null) {
 			throw new IllegalStateException("Entity was null");
 		}
@@ -69,7 +69,7 @@ public class DepartmentFormController implements Initializable {
 			entity = getFormData();
 			service.saveOrUpdate(entity);
 			notifyDataChangeListeners();
-			Utils.currentStage(event).close();
+			Utils.currentStage(evento).close();
 		}
 		catch (ValidationException e) {
 			setErrorMessages(e.getErrors());
